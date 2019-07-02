@@ -2,11 +2,13 @@ import React, { Fragment } from 'react';
 
 import GlobalStyles from './styles/globals';
 
+import Sidebar from './components/Sidebar/Sidebar';
+
 function App() {
   return (
     <Fragment>
       <GlobalStyles />
-      <h1>Ola</h1>
+      <Sidebar />
     </Fragment>
   );
 }

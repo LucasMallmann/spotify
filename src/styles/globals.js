@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   body {
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
