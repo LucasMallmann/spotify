@@ -32,7 +32,7 @@ const Sidebar = () => (
         <li>
           <a href="">Álbuns</a>
         </li>
-        <li>
+        {/* <li>
           <a href="">Artistas</a>
         </li>
         <li>
@@ -46,7 +46,7 @@ const Sidebar = () => (
         </li>
         <li>
           <a href="">Podcasts</a>
-        </li>
+        </li> */}
       </Nav>
 
       <Nav>
