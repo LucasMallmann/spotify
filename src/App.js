@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyles from './styles/globals';
+import './config/reactotron';
 
 import { Wrapper, Container, Content } from './styles/components';
 
