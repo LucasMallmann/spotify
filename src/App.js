@@ -11,11 +11,10 @@ import { Wrapper, Container, Content } from './styles/components';
 import Sidebar from './components/Sidebar/Sidebar';
 import Player from './components/Player/Player';
 import Header from './components/Header/Header';
+import ErrorBox from './components/ErrorBox/ErrorBox';
 
 import store from './store';
 import Routes from './routes';
-
-console.tron.log('teste');
 
 function App() {
   return (
@@ -26,6 +25,7 @@ function App() {
           <Container>
             <Sidebar />
             <Content>
+              <ErrorBox />
               <Header />
               <Routes />
             </Content>
