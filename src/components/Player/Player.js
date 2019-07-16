@@ -1,7 +1,9 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import Slider from 'rc-slider';
+import { connect } from 'react-redux';
 import Sound from 'react-sound';
+import PropTypes from 'prop-types';
 
 import {
   Container,
@@ -18,12 +20,11 @@ import ShuffleIcon from '../../assets/images/shuffle.svg';
 import BackwardIcon from '../../assets/images/backward.svg';
 import ForwardIcon from '../../assets/images/forward.svg';
 import PlayIcon from '../../assets/images/play.svg';
-// import PauseIcon from '../../assets/images/pause.svg';
 import RepeatIcon from '../../assets/images/repeat.svg';
 
-const Player = () => (
+const Player = ({ player }) => (
   <Container>
-    {/* <Sound url="" /> */}
+    {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
 
     <Current>
       <img
@@ -79,4 +80,17 @@ const Player = () => (
   </Container>
 );
 
-export default Player;
+Player.propTypes = {
+  player: PropTypes.shape({
+    currentSong: PropTypes.shape({
+      file: PropTypes.string,
+    }).isRequired,
+    status: PropTypes.string,
+  }).isRequired,
+};
+
+const mapStateToProps = state => ({
+  player: state.player,
+});
+
+export default connect(mapStateToProps)(Player);
