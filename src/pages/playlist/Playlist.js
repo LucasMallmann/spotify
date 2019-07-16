@@ -111,7 +111,7 @@ class Playlist extends Component {
                   onClick={() => this.setState({ selectedSong: song.id })}
                   onDoubleClick={() => loadSong(song)}
                   selected={this.state.selectedSong === song.id}
-                  playing={currentSong && currentSong.id === this.state.selectedSong.id}
+                  playing={currentSong && currentSong.id === this.state.selectedSong}
                 >
                   <td>
                     <img src={PlusIcon} alt="Adicionar" />
