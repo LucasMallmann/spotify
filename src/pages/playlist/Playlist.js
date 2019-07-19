@@ -109,9 +109,12 @@ class Playlist extends Component {
                 <SongItem
                   key={song.id}
                   onClick={() => this.setState({ selectedSong: song.id })}
-                  onDoubleClick={() => loadSong(song, playlist.songs)}
+                  onDoubleClick={() => {
+                    loadSong(song, playlist.songs);
+                    this.setState({ selectedSong: song.id });
+                  }}
                   selected={this.state.selectedSong === song.id}
-                  playing={!!currentSong && currentSong.id === this.state.selectedSong}
+                  playing={currentSong && currentSong.id === song.id}
                 >
                   <td>
                     <img src={PlusIcon} alt="Adicionar" />
